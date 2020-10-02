@@ -6,6 +6,20 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
 
 Will keep the notes here until there are enough to organize.
 
+## AWS
+
+### List Stacks
+
+```
+aws cloudformation list-stacks --profile <profile-name-optional> | jq '.StackSummaries | .[] |  {name: .StackName, status: .StackStatus}'
+```
+
+### Delete Stack
+
+```
+aws cloudformation delete-stack --stack-name place-indexer --profile <profile-name-optional>
+```
+
 ## Go
 
 ### install go
