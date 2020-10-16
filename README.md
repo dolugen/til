@@ -20,6 +20,14 @@ aws cloudformation list-stacks --profile <profile-name-optional> | jq '.StackSum
 aws cloudformation delete-stack --stack-name place-indexer --profile <profile-name-optional>
 ```
 
+## Git
+
+### List TODOs in the current branch
+
+```
+git diff master..$(git branch --show-current) | grep TODO
+```
+
 ## Go
 
 ### install go
