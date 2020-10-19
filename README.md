@@ -1,10 +1,19 @@
-# TIL
+# TIL <!-- omit in toc -->
 
 Today I Learned
 
 Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til repo](/).
 
 Will keep the notes here until there are enough to organize.
+
+- [AWS](#aws)
+  - [List Stacks](#list-stacks)
+  - [Delete Stack](#delete-stack)
+- [Git](#git)
+  - [List TODOs in the current branch](#list-todos-in-the-current-branch)
+- [Go](#go)
+  - [install go](#install-go)
+  - [go get installs where?](#go-get-installs-where)
 
 ## AWS
 
