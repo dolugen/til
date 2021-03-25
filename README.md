@@ -7,6 +7,7 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
 - [AWS](#aws)
   - [List Stacks](#list-stacks)
   - [Delete Stack](#delete-stack)
+- [conda](#conda)
 - [fzf](#fzf)
   - [List recent Git branches and switch to one](#list-recent-git-branches-and-switch-to-one)
 - [Git](#git)
@@ -20,6 +21,8 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
 - [Go](#go)
   - [install go](#install-go)
   - [go get installs where?](#go-get-installs-where)
+- [Jupyter Lab](#jupyter-lab)
+  - [Code formatting](#code-formatting)
 - [pyenv](#pyenv)
   - [List installable Python versions](#list-installable-python-versions)
   - [List installed Python versions](#list-installed-python-versions)
@@ -38,6 +41,39 @@ aws cloudformation list-stacks --profile <profile-name-optional> | jq '.StackSum
 
 ```
 aws cloudformation delete-stack --stack-name place-indexer --profile <profile-name-optional>
+```
+
+## conda
+
+Quick howto on installing and using the conda package manager.
+
+```
+brew install miniconda
+```
+
+Add to your shell:
+```
+conda init zsh
+```
+
+Create a new environment with a specific Python version:
+```
+conda create -n notebooks python=3.9
+```
+
+List available environments:
+```
+conda env list
+```
+
+Remove an environment:
+```
+conda env remove --name notebooks
+```
+
+Install a package to the current environment:
+```
+conda install jupyterlab=3
 ```
 
 ## fzf
@@ -140,6 +176,19 @@ go get github.com/user/repo
 But where is it installed?
 
 It's in `~/go/bin/`.
+
+## Jupyter Lab
+
+### Code formatting
+
+Install [jupyter_code_formatter]() extension. This adds a code format button in the notebook toolbar, and two new commands in the Edit menu.
+
+Make sure you have `black` and `isort` installed.
+
+```
+conda install -c conda-forge jupyterlab_code_formatter
+conda install black isort
+```
 
 ## pyenv
 
