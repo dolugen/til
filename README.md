@@ -1,4 +1,4 @@
-# TIL <!-- omit in toc -->
+# TIL<!-- omit in toc -->
 
 Today I Learned
 
@@ -23,6 +23,8 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
   - [go get installs where?](#go-get-installs-where)
 - [Jupyter Lab](#jupyter-lab)
   - [Code formatting](#code-formatting)
+- [pandas](#pandas)
+  - [Read from newline delimited JSON file](#read-from-newline-delimited-json-file)
 - [pyenv](#pyenv)
   - [List installable Python versions](#list-installable-python-versions)
   - [List installed Python versions](#list-installed-python-versions)
@@ -188,6 +190,19 @@ Make sure you have `black` and `isort` installed.
 ```
 conda install -c conda-forge jupyterlab_code_formatter
 conda install black isort
+```
+
+## pandas
+
+### Read from newline delimited JSON file
+
+Pandas doesn't know how to read from an ndjson file.
+Opening the file and creating a record from each line
+does the trick.
+
+```
+  with open(filepath) as f:
+    pd.DataFrame.from_records(map(json.loads, f.readlines()))
 ```
 
 ## pyenv
