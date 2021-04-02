@@ -30,6 +30,11 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
   - [List installed Python versions](#list-installed-python-versions)
   - [Set Python version](#set-python-version)
   - [Set local Python version](#set-local-python-version)
+- [Rust](#rust)
+  - [rustup](#rustup)
+    - [install nightly toolchain](#install-nightly-toolchain)
+    - [list installed toolchains](#list-installed-toolchains)
+    - [set default toolchain](#set-default-toolchain)
 
 ## AWS
 
@@ -222,4 +227,28 @@ pyenv global 3.9.0
 When you want to set a Python version for a single workspace.
 ```
 pyenv local 3.7.9
+```
+
+## Rust
+
+### rustup
+#### install nightly toolchain
+```
+rustup toolchain install nightly
+```
+
+#### list installed toolchains
+```
+rustup toolchain list
+```
+
+#### set default toolchain
+```
+rustup default <toolchain name>
+
+# use nightly
+rustup default nightly
+
+# back to stable
+rustup default stable
 ```
