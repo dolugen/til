@@ -196,13 +196,8 @@ conda install black isort
 
 ### Read from newline delimited JSON file
 
-Pandas doesn't know how to read from an ndjson file.
-Opening the file and creating a record from each line
-does the trick.
-
 ```
-  with open(filepath) as f:
-    pd.DataFrame.from_records(map(json.loads, f.readlines()))
+pd.read_json(filepath, lines=True)
 ```
 
 ## pyenv
