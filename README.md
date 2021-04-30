@@ -30,23 +30,26 @@ Inspired by [jbranchaud](https://github.com/jbranchaud/til/) and [the other til 
   - [List installed Python versions](#list-installed-python-versions)
   - [Set Python version](#set-python-version)
   - [Set local Python version](#set-local-python-version)
-- [Rust](#rust)
-  - [rustup](#rustup)
-    - [install nightly toolchain](#install-nightly-toolchain)
-    - [list installed toolchains](#list-installed-toolchains)
-    - [set default toolchain](#set-default-toolchain)
+- [rustup](#rustup)
+  - [install nightly toolchain](#install-nightly-toolchain)
+  - [list installed toolchains](#list-installed-toolchains)
+  - [set default toolchain](#set-default-toolchain)
+  - [update toolchain](#update-toolchain)
+  - [update rustup itself](#update-rustup-itself)
+- [shell](#shell)
+  - [Access the most recent parameter](#access-the-most-recent-parameter)
 
 ## AWS
 
 ### List Stacks
 
-```
+```bash
 aws cloudformation list-stacks --profile <profile-name-optional> | jq '.StackSummaries | .[] |  {name: .StackName, status: .StackStatus}'
 ```
 
 ### Delete Stack
 
-```
+```bash
 aws cloudformation delete-stack --stack-name place-indexer --profile <profile-name-optional>
 ```
 
@@ -201,7 +204,7 @@ conda install black isort
 
 ### Read from newline delimited JSON file
 
-```
+```python
 pd.read_json(filepath, lines=True)
 ```
 
@@ -229,21 +232,19 @@ When you want to set a Python version for a single workspace.
 pyenv local 3.7.9
 ```
 
-## Rust
-
-### rustup
-#### install nightly toolchain
+## rustup
+### install nightly toolchain
 ```
 rustup toolchain install nightly
 ```
 
-#### list installed toolchains
-```
+### list installed toolchains
+```bash
 rustup toolchain list
 ```
 
-#### set default toolchain
-```
+### set default toolchain
+```bash
 rustup default <toolchain name>
 
 # use nightly
@@ -251,4 +252,27 @@ rustup default nightly
 
 # back to stable
 rustup default stable
+```
+
+### update toolchain
+```
+rustup update
+```
+This will update the everything included in the toolchain, such as `rustc`, `cargo`, `rustfmt`.
+
+### update rustup itself
+```
+rustup self update
+```
+
+
+## shell
+
+### Access the most recent parameter
+```bash
+$_
+```
+For example, create a directory and change into it:
+```bash
+mkdir /tmp/mydir && cd $_
 ```
