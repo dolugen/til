@@ -2,7 +2,7 @@
 
 Today I Learned
 
-Inspired by [jbranchaud](https://github.com/jbranchaud/til/).
+Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
 
 - [AWS](#aws)
   - [List Stacks](#list-stacks)
