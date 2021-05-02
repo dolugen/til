@@ -196,8 +196,8 @@ Install [jupyter_code_formatter](https://github.com/ryantam626/jupyterlab_code_f
 Make sure you have `black` and `isort` installed.
 
 ```
-conda install -c conda-forge jupyterlab_code_formatter
-conda install black isort
+pip install jupyterlab_code_formatter
+pip install black isort
 ```
 
 ## pandas
