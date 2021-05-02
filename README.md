@@ -191,7 +191,7 @@ It's in `~/go/bin/`.
 
 ### Code formatting
 
-Install [jupyter_code_formatter]() extension. This adds a code format button in the notebook toolbar, and two new commands in the Edit menu.
+Install [jupyter_code_formatter](https://github.com/ryantam626/jupyterlab_code_formatter) extension. This adds a code format button in the notebook toolbar, and two new commands in the Edit menu.
 
 Make sure you have `black` and `isort` installed.
 
