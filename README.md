@@ -22,6 +22,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [install go](#install-go)
   - [go get installs where?](#go-get-installs-where)
 - [Jupyter Lab](#jupyter-lab)
+- [Save cell contents as file](#save-cell-contents-as-file)
   - [Code formatting](#code-formatting)
 - [pandas](#pandas)
   - [Read from newline delimited JSON file](#read-from-newline-delimited-json-file)
@@ -188,6 +189,14 @@ But where is it installed?
 It's in `~/go/bin/`.
 
 ## Jupyter Lab
+
+## Save cell contents as file
+Using `%%file` magic function, the cell contents will be saved in the specified file. For example:
+```
+%%file my_script.py
+print('hello.py')
+```
+After executing the cell, you should see `Writing my_script.py` as the cell output, and a new file is created with the contents `print('hello.py')\n`
 
 ### Code formatting
 
