@@ -22,7 +22,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [install go](#install-go)
   - [go get installs where?](#go-get-installs-where)
 - [Jupyter Lab](#jupyter-lab)
-- [Save cell contents as file](#save-cell-contents-as-file)
+  - [Save cell contents as file](#save-cell-contents-as-file)
   - [Code formatting](#code-formatting)
 - [pandas](#pandas)
   - [Read from newline delimited JSON file](#read-from-newline-delimited-json-file)
@@ -31,12 +31,15 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [List installed Python versions](#list-installed-python-versions)
   - [Set Python version](#set-python-version)
   - [Set local Python version](#set-local-python-version)
-- [rustup](#rustup)
-  - [install nightly toolchain](#install-nightly-toolchain)
-  - [list installed toolchains](#list-installed-toolchains)
-  - [set default toolchain](#set-default-toolchain)
-  - [update toolchain](#update-toolchain)
-  - [update rustup itself](#update-rustup-itself)
+- [Rust](#rust)
+  - [cargo](#cargo)
+    - [open docs locally](#open-docs-locally)
+  - [rustup](#rustup)
+    - [install nightly toolchain](#install-nightly-toolchain)
+    - [list installed toolchains](#list-installed-toolchains)
+    - [set default toolchain](#set-default-toolchain)
+    - [update toolchain](#update-toolchain)
+    - [update rustup itself](#update-rustup-itself)
 - [shell](#shell)
   - [Access the most recent parameter](#access-the-most-recent-parameter)
 
@@ -190,7 +193,7 @@ It's in `~/go/bin/`.
 
 ## Jupyter Lab
 
-## Save cell contents as file
+### Save cell contents as file
 Using `%%file` magic function, the cell contents will be saved in the specified file. For example:
 ```
 %%file my_script.py
@@ -241,18 +244,30 @@ When you want to set a Python version for a single workspace.
 pyenv local 3.7.9
 ```
 
-## rustup
-### install nightly toolchain
+## Rust
+
+### cargo
+
+#### open docs locally
+
+This will generate HTML docs of the current crate and its dependencies, and open it in the browser.
+
+```
+cargo doc --open
+```
+
+### rustup
+#### install nightly toolchain
 ```
 rustup toolchain install nightly
 ```
 
-### list installed toolchains
+#### list installed toolchains
 ```bash
 rustup toolchain list
 ```
 
-### set default toolchain
+#### set default toolchain
 ```bash
 rustup default <toolchain name>
 
@@ -263,17 +278,16 @@ rustup default nightly
 rustup default stable
 ```
 
-### update toolchain
+#### update toolchain
 ```
 rustup update
 ```
 This will update the everything included in the toolchain, such as `rustc`, `cargo`, `rustfmt`.
 
-### update rustup itself
+#### update rustup itself
 ```
 rustup self update
 ```
-
 
 ## shell
 
