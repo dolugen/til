@@ -289,6 +289,12 @@ This will update the everything included in the toolchain, such as `rustc`, `car
 rustup self update
 ```
 
+#### open rust bookshelf
+Opens local copy of Rust documentation, including _The Rust Programming Language_.
+```
+rustup doc
+```
+
 ## shell
 
 ### Access the most recent parameter
