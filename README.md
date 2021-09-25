@@ -34,14 +34,22 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
 - [Rust](#rust)
   - [cargo](#cargo)
     - [open docs locally](#open-docs-locally)
+  - [cargo addons](#cargo-addons)
+    - [cargo-edit](#cargo-edit)
   - [rustup](#rustup)
     - [install nightly toolchain](#install-nightly-toolchain)
     - [list installed toolchains](#list-installed-toolchains)
     - [set default toolchain](#set-default-toolchain)
     - [update toolchain](#update-toolchain)
     - [update rustup itself](#update-rustup-itself)
+    - [open rust bookshelf](#open-rust-bookshelf)
 - [shell](#shell)
   - [Access the most recent parameter](#access-the-most-recent-parameter)
+- [imagemagick](#imagemagick)
+  - [Combine images side by side](#combine-images-side-by-side)
+  - [Rotate an image 90 degrees](#rotate-an-image-90-degrees)
+- [VS Code](#vs-code)
+  - [Useful navigation shortcuts](#useful-navigation-shortcuts)
 
 ## AWS
 
@@ -256,6 +264,12 @@ This will generate HTML docs of the current crate and its dependencies, and open
 cargo doc --open
 ```
 
+### cargo addons
+
+#### [cargo-edit](https://github.com/killercup/cargo-edit)
+
+Extends cargo to have commands such as `cargo add`, making `Cargo.toml` management a breeze.
+
 ### rustup
 #### install nightly toolchain
 ```
@@ -304,4 +318,35 @@ $_
 For example, create a directory and change into it:
 ```bash
 mkdir /tmp/mydir && cd $_
+```
+
+## imagemagick
+
+### Combine images side by side
+
+```
+montage -geometry 500x500 [input-file1 input-file2...] output-file
+```
+
+### Rotate an image 90 degrees
+
+```
+convert -rotate "90" original.gif rotated-output.gif
+```
+
+## VS Code
+
+### Useful navigation shortcuts
+
+- Find file by name: <kbd>cmd</kbd> + <kbd>p</kbd>
+- Go to symbol in the currently open file: <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>o</kbd>
+- Go to symbol: <kbd>cmd</kbd> + <kbd>t</kbd>
+
+### Enable `code-insiders` command for the [Insiders](https://code.visualstudio.com/insiders/) version
+
+Within the editor, open command executor with <kbd>cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> and type "Install code-insiders command in PATH" and execute it.
+
+### List installed extensions
+```
+code --list-extensions
 ```
