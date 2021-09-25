@@ -50,6 +50,8 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [Rotate an image 90 degrees](#rotate-an-image-90-degrees)
 - [VS Code](#vs-code)
   - [Useful navigation shortcuts](#useful-navigation-shortcuts)
+  - [Enable `code-insiders` command for the Insiders version](#enable-code-insiders-command-for-the-insiders-version)
+  - [List installed extensions](#list-installed-extensions)
 
 ## AWS
 
