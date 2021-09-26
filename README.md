@@ -52,6 +52,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [Useful navigation shortcuts](#useful-navigation-shortcuts)
   - [Enable `code-insiders` command for the Insiders version](#enable-code-insiders-command-for-the-insiders-version)
   - [List installed extensions](#list-installed-extensions)
+  - [Run selection/current line in Python REPL](#run-selectioncurrent-line-in-python-repl)
 
 ## AWS
 
@@ -352,3 +353,9 @@ Within the editor, open command executor with <kbd>cmd</kbd>+<kbd>shift</kbd>+<k
 ```
 code --list-extensions
 ```
+
+### Run selection/current line in Python REPL
+
+Tap <kbd>shift</kbd>+<kbd>enter</kbd>. This will open a Python repl and execute the selected code.
+
+This is also available via the command view (<kbd>cmd</kbd>+<kbd>shift</kbd>+<kbd>p</kbd>). Open the command view and type "python run line" (partial input works).
