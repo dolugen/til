@@ -48,6 +48,10 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
 - [imagemagick](#imagemagick)
   - [Combine images side by side](#combine-images-side-by-side)
   - [Rotate an image 90 degrees](#rotate-an-image-90-degrees)
+  - [Convert an image format](#convert-an-image-format)
+  - [Convert format of multiple files](#convert-format-of-multiple-files)
+- [exiftool](#exiftool)
+  - [Remove EXIF metadata from photos](#remove-exif-metadata-from-photos)
 - [VS Code](#vs-code)
   - [Useful navigation shortcuts](#useful-navigation-shortcuts)
   - [Enable `code-insiders` command for the Insiders version](#enable-code-insiders-command-for-the-insiders-version)
@@ -325,6 +329,8 @@ mkdir /tmp/mydir && cd $_
 
 ## imagemagick
 
+Friendly reminder: imagemagick commands may contain hidden magic and can be destructive -- be sure to backup and work on the copy of your precious images.
+
 ### Combine images side by side
 
 ```
@@ -336,6 +342,33 @@ montage -geometry 500x500 [input-file1 input-file2...] output-file
 ```
 convert -rotate "90" original.gif rotated-output.gif
 ```
+
+### Convert an image format
+
+This will create a copy of the image with a new format:
+```
+convert input.heic output.jpg
+```
+
+### Convert format of multiple files
+
+If you have a bunch of HEIC files and want to convert all of them to JPG:
+
+```
+mogrify -format jpg *.heic
+```
+
+## exiftool
+
+### Remove EXIF metadata from photos
+
+This will remove all metadata from the given photo file.
+
+```
+exiftool -all= photo.jpg
+```
+
+Here the `photo.jpg` will be stripped of the metadata, and a copy of the original will be created. To overwrite the original without preserving a copy, use the `-overwrite_original` option.
 
 ## VS Code
 
