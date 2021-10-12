@@ -18,6 +18,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
   - [List my repos](#list-my-repos)
   - [Create PR with a title](#create-pr-with-a-title)
   - [Generate PR title from the branch name](#generate-pr-title-from-the-branch-name)
+  - [Clone all repos of a GitHub user/organization](#clone-all-repos-of-a-github-userorganization)
 - [Go](#go)
   - [install go](#install-go)
   - [go get installs where?](#go-get-installs-where)
@@ -45,6 +46,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
     - [open rust bookshelf](#open-rust-bookshelf)
 - [shell](#shell)
   - [Access the most recent parameter](#access-the-most-recent-parameter)
+  - [Get my computer's MAC addresses](#get-my-computers-mac-addresses)
 - [imagemagick](#imagemagick)
   - [Combine images side by side](#combine-images-side-by-side)
   - [Rotate an image 90 degrees](#rotate-an-image-90-degrees)
@@ -186,6 +188,18 @@ If you use `PROJ-XXX-slug` pattern for your branch names, and use `PROJ-XXX: slu
 # insert bash one liner here
 ```
 
+### Clone all repos of a GitHub user/organization
+
+Sometimes you want to clone all the repos from an organization. You can do this using `gh`, `jq` and `xargs`.
+
+Here `<username>` can be a GitHub user or organization.
+
+```bash
+gh repo list <username> --json name --jq ".[] | .nameWithOwner" | xargs -I REPO gh repo clone REPO -- REPO
+```
+
+Be aware that this may copy hundreds of repos to your machine, so you might want to check how many repos the user have with `gh repo list <username>` first.
+
 ## Go
 
 ### install go
@@ -325,6 +339,12 @@ $_
 For example, create a directory and change into it:
 ```bash
 mkdir /tmp/mydir && cd $_
+```
+
+### Get my computer's MAC addresses
+
+```bash
+ifconfig | grep ether | awk '{print $2}'
 ```
 
 ## imagemagick
