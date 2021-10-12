@@ -25,6 +25,8 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
 - [Jupyter Lab](#jupyter-lab)
   - [Save cell contents as file](#save-cell-contents-as-file)
   - [Code formatting](#code-formatting)
+- [Kubernetes](#kubernetes)
+  - [Working with contexts](#working-with-contexts)
 - [pandas](#pandas)
   - [Read from newline delimited JSON file](#read-from-newline-delimited-json-file)
 - [pyenv](#pyenv)
@@ -239,6 +241,25 @@ Make sure you have `black` and `isort` installed.
 ```
 pip install jupyterlab_code_formatter
 pip install black isort
+```
+
+## Kubernetes
+
+### Working with contexts
+
+List available contexts:
+```
+kubectl config get-contexts
+```
+
+Show current context:
+```
+kubectl config current-context
+```
+
+Change context:
+```
+kubectl config use-context <context name>
 ```
 
 ## pandas
