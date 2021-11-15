@@ -197,10 +197,12 @@ Sometimes you want to clone all the repos from an organization. You can do this 
 Here `<username>` can be a GitHub user or organization.
 
 ```bash
-gh repo list <username> --json name --jq ".[] | .nameWithOwner" | xargs -I REPO gh repo clone REPO -- REPO
+gh repo list <username> --json nameWithOwner --jq ".[] | .nameWithOwner" | xargs -I REPO gh repo clone REPO -- REPO
 ```
 
 Be aware that this may copy hundreds of repos to your machine, so you might want to check how many repos the user have with `gh repo list <username>` first.
+
+Use `-L` or `--limit` to specify the number of repos to clone.
 
 ## Go
 
