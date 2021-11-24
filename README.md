@@ -49,6 +49,7 @@ Inspired by [jbranchaud/til](https://github.com/jbranchaud/til/).
 - [shell](#shell)
   - [Access the most recent parameter](#access-the-most-recent-parameter)
   - [Get my computer's MAC addresses](#get-my-computers-mac-addresses)
+  - [Operate on files with names starting with hyphen](#operate-on-files-with-names-starting-with-hyphen)
 - [imagemagick](#imagemagick)
   - [Combine images side by side](#combine-images-side-by-side)
   - [Rotate an image 90 degrees](#rotate-an-image-90-degrees)
@@ -369,6 +370,33 @@ mkdir /tmp/mydir && cd $_
 ```bash
 ifconfig | grep ether | awk '{print $2}'
 ```
+
+### Operate on files with names starting with hyphen
+
+When filenames start with a hyphen and commands may interpret it as argument.
+
+For example, you have a file called `-test` and want to rename this to `test`. This won't work:
+
+```bash
+mv -test test
+mv: illegal option -- t
+usage: mv [-f | -i | -n] [-v] source target
+       mv [-f | -i | -n] [-v] source ... directory
+```
+
+Use the `--` signal to end option processing before typing the filename.
+
+```bash
+mv -- -test test
+```
+
+This works with other commands as expected:
+
+```bash
+touch -- -myfile
+rm -- -myfile
+```
+
 
 ## imagemagick
 
